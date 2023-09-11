@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 
 // import routes
 const authRoute = require("./routes/auth");
+const postRoute = require("./routes/posts");
 
 const uri =
   "mongodb+srv://madhushri:QDWpVtfiyl9QcycQ@cluster0.awxk4zb.mongodb.net/?retryWrites=true&w=majority";
@@ -46,6 +47,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // route middlewares
 app.use("/api/user", authRoute);
+app.use("/api/posts", postRoute);
 
 app.listen(4040, () => {
   console.log("server started on port 4040");
